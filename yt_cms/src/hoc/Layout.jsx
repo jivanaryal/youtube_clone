@@ -6,14 +6,14 @@ const Layout = () => {
   return (
     <div>
       <div className="flex w-full">
-        <div className="sidebar w-[20%] bg-white-500 z-50  shadow-2xl rounded-md max-h-screen min-h-screen">
+        <div className="sticky top-0 left-0 w-[20%] bg-[#ffffff] z-50 min-h-screen max-h-screen  shadow-xl  ">
           <Sidebar />
         </div>
         <div className="flex flex-col w-full">
-          <div className="nav">
+          <div className="sticky top-0 left-0">
             <Navbar />
           </div>
-          <div>
+          <div className="bg-[#F0F4F6] min-h-[91vh] -z-50">
             <Outlet />
           </div>
         </div>
