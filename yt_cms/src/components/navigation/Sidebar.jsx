@@ -15,10 +15,9 @@ const SidebarData = [
   },
 ];
 
-console.log(SidebarData);
-
 const Sidebar = () => {
   const location = useLocation();
+  console.log(location.pathname);
   return (
     <div className="relative">
       <div>
@@ -36,11 +35,11 @@ const Sidebar = () => {
             <Link key={i} to={val.path}>
               <div
                 className={`flex items-center gap-2 font-semibold text-sm text-gray-70000 capitalize border-[1px] text-gray-500 py-2 rounded-lg shadow-md shadow-gray-100 mx-4 pl-2  cursor-pointer ${
-                  location.pathname == val.path && "bg-[#3185FB] text-white"
+                  location.pathname === val.path && "bg-[#3185FB] text-white"
                 }`}
               >
                 <div className="text-red">{val.logo}</div>
-                <div className="">{val.name}</div>
+                <div>{val.name}</div>
               </div>
             </Link>
           );

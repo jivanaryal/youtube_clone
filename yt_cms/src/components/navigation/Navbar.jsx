@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <div className="h-16 shadow-lg  -z-10 bg-[#ffffff]">
       <div className="flex h-full justify-between  items-center">
-        <div className="pl-6 text-[#6a6c6e] text-base">Youtube's CMS</div>
+        <div className="pl-6 text-[#6a6c6e] text-base">Youtube CMS</div>
         <div className="flex items-center gap-4">
           <input
             type="search"

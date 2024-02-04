@@ -13,7 +13,7 @@ const Layout = () => {
           <div className="sticky top-0 left-0">
             <Navbar />
           </div>
-          <div className="bg-[#F0F4F6] min-h-[91vh] -z-50">
+          <div className="bg-[#F0F4F6] min-h-[91vh] ">
             <Outlet />
           </div>
         </div>
