@@ -24,12 +24,12 @@ function Navbar() {
                 className="border border-gray-300 w-[30rem] p-2 outline-none rounded-l-3xl"
                 placeholder="Search"
               />
-              <button className=" border border-gray-300  rounded-r-3xl px-6 py-2 bg-gray-200 ">
+              <button className="cursor-pointer border border-gray-300  rounded-r-3xl px-6 py-2 bg-gray-200 ">
                 <IoSearchOutline className="text-2xl" />
               </button>
             </div>
 
-            <div className=" border-none rounded-full p-1 bg-gray-200 ">
+            <div className="  cursor-pointer border-none rounded-full p-1 bg-gray-200 ">
               <MdKeyboardVoice className="text-2xl" />
             </div>
           </div>
