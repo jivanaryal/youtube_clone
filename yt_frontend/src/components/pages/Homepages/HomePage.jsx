@@ -71,7 +71,7 @@ const HomePage = () => {
                   <img src={val.image} alt="" className="rounded-xl" />
                 </div>
                 <div className="flex items-center gap-2 pt-2">
-                  <div className="relative top-[-1rem]">
+                  <div className="mb-8">
                     <img src={val.profilePic} alt="" className="w-10" />
                   </div>
                   <div className="items leading-6">
