@@ -1,5 +1,6 @@
 // import React from 'react'
 import logo from "../../assets/logo/ytlogo.png";
+import addNew from "../../assets/logo/addNew.png";
 import { IoSearchOutline } from "react-icons/io5";
 import { MdKeyboardVoice } from "react-icons/md";
 import { IoIosMenu } from "react-icons/io";
@@ -27,6 +28,9 @@ function Navbar() {
           </div>
           {/* top-right section */}
           <div className="flex gap-3">
+            <div>
+              <img src={addNew} alt="" />
+            </div>
             <div> notification bell</div>
             <div>profile</div>
           </div>
