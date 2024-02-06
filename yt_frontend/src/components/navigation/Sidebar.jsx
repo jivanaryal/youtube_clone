@@ -39,7 +39,7 @@ const SideYou = [
 
 const Sidebar = () => {
   return (
-    <div className="bg-white fixed w-[15%] top-14 h-screen left-0 pt-">
+    <div className="bg-white fixed w-[15%] top-14 h-screen left-0">
       <div className="flex flex-col gap-1  mx-4 mt-2 ">
         {SidebarItem.map((val, i) => {
           return (
