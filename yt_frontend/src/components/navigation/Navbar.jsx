@@ -5,7 +5,10 @@ import { IoIosMenu } from "react-icons/io";
 import { BiBell } from "react-icons/bi";
 import { TbVideoPlus } from "react-icons/tb";
 import { CgProfile } from "react-icons/cg";
-function Navbar() {
+import { useState } from "react";
+import { Link } from "react-router-dom";
+function Navbar({ showCms, setShowCms }) {
+  const [show, setShow] = useState(true);
   return (
     <div>
       <div>
@@ -17,12 +20,24 @@ function Navbar() {
           </div>
           {/* search bar and voice command */}
           <div className="flex gap-3 items-center">
-            <div className="flex ">
+            <div className="flex relative">
               <input
-                type="text"
-                className="border border-gray-300 w-[30rem] p-2 outline-none rounded-l-3xl"
+                type="search"
+                className={`border border-gray-300 w-[30rem] p-2 pl-5 outline-none rounded-l-3xl ${
+                  show === true ? "w-[29rem] pl-10" : "w-[30rem]"
+                }`}
                 placeholder="Search"
+                onClick={() => {
+                  setShow(!show);
+                }}
               />
+              <div
+                className={`absolute top-3 text-xl left-2 text-gray-500 block  ${
+                  show === true ? "hidden" : "block"
+                }`}
+              >
+                <IoSearchOutline />
+              </div>
               <button className=" border border-gray-300  rounded-r-3xl px-6 py-2 bg-gray-200 ">
                 <IoSearchOutline className="text-2xl" />
               </button>
@@ -35,7 +50,15 @@ function Navbar() {
           {/* top-right section */}
           <div className="flex gap-5">
             <div className="cursor-pointer p-1 border-none hover:border hover:bg-gray-200 hover:rounded-full">
-              <TbVideoPlus className="text-2xl" />
+              <Link to="/cdashboard">
+                {" "}
+                <TbVideoPlus
+                  className="text-2xl"
+                  onClick={() => {
+                    setShowCms(false);
+                  }}
+                />
+              </Link>
             </div>
             <div className="cursor-pointer p-1 border-none hover:border hover:bg-gray-200 hover:rounded-full">
               <BiBell className="text-2xl" />
