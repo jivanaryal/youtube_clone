@@ -2,6 +2,7 @@ import { IoMdHome } from "react-icons/io";
 import { SiYoutubeshorts } from "react-icons/si";
 import { MdOutlineSubscriptions } from "react-icons/md";
 import { FaAngleRight } from "react-icons/fa";
+import { FaHistory } from "react-icons/fa";
 
 const SidebarItem = [
   {
@@ -24,7 +25,7 @@ const SideYou = [
     name: "your channel",
   },
   {
-    logo: <IoMdHome />,
+    logo: <FaHistory />,
     name: "history",
   },
   {
@@ -35,11 +36,23 @@ const SideYou = [
     logo: <IoMdHome />,
     name: "watch later",
   },
+  {
+    logo: <IoMdHome />,
+    name: "watch later",
+  },
+  {
+    logo: <IoMdHome />,
+    name: "Your Clips",
+  },
+  {
+    logo: <IoMdHome />,
+    name: "Liked Videos",
+  },
 ];
 
 const Sidebar = () => {
   return (
-    <div className="bg-white fixed w-[15%] top-14 h-screen left-0">
+    <div className="bg-white fixed w-[15%] top-14 h-screen left-0 pt-">
       <div className="flex flex-col gap-1  mx-4 mt-2 ">
         {SidebarItem.map((val, i) => {
           return (
