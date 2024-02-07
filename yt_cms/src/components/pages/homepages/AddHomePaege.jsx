@@ -10,7 +10,7 @@ const AddHomePaege = () => {
         onSubmit={() => {}}
       >
         <Form className="mx-8 my-1 ">
-          <div className="bg-gray-300 px-2 rounded-md pb-2">
+          <div className="bg-gray-300 px-2 rounded-md pb">
             <div className="flex flex-col rounded-md">
               <label className="pt-1" htmlFor="title">
                 Title
