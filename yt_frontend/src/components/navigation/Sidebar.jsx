@@ -8,6 +8,7 @@ import sub3 from "../../assets/subscription/sub3.jpg";
 import sub4 from "../../assets/subscription/sub4.jpg";
 import sub5 from "../../assets/subscription/sub5.jpg";
 import sub6 from "../../assets/subscription/sub6.jpg";
+import { FaHistory } from "react-icons/fa";
 const SidebarItem = [
   {
     logo: <IoMdHome />,
@@ -29,7 +30,7 @@ const SideYou = [
     name: "your channel",
   },
   {
-    logo: <IoMdHome />,
+    logo: <FaHistory />,
     name: "history",
   },
   {
@@ -39,6 +40,18 @@ const SideYou = [
   {
     logo: <IoMdHome />,
     name: "watch later",
+  },
+  {
+    logo: <IoMdHome />,
+    name: "watch later",
+  },
+  {
+    logo: <IoMdHome />,
+    name: "Your Clips",
+  },
+  {
+    logo: <IoMdHome />,
+    name: "Liked Videos",
   },
 ];
 const Subscriptions = [
@@ -70,6 +83,7 @@ const Subscriptions = [
 const Sidebar = () => {
   return (
     <div className="bg-white fixed w-[17%] top-14 h-screen left-0 right-1 overflow-auto  hover:overflow-scroll">
+    <div className="bg-white fixed w-[15%] top-14 h-screen left-0 pt-">
       <div className="flex flex-col gap-1  mx-4 mt-2 ">
         {SidebarItem.map((val, i) => {
           return (
