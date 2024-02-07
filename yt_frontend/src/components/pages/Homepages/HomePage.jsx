@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import homeItem from "../../../assets/images/homeItem.png";
 import profile from "../../../assets/images/profile.png";
+
 const homePageItem = [
   {
     image: homeItem,
