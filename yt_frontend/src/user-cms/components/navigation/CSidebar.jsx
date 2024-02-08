@@ -36,7 +36,7 @@ const CSidebarItem = [
 
 const CSidebar = () => {
   return (
-    <div className="bg-white fixed w-[16%] top-[65px] pt-6 h-screen left-0 border-2">
+    <div className="bg-white fixed w-[16%] top-[65px] pt-6 h-screen left-0 border-2 overflow-scroll">
       {/* profile section */}
       <div>
         <div className="flex flex-col items-center justify-center">

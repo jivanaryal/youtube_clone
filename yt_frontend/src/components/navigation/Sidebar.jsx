@@ -67,9 +67,27 @@ const Subscriptions = [
     name: "Ansh Mehra",
   },
 ];
+const Explore = [
+  {
+    logo: <IoMdHome />,
+    name: "watch later",
+  },
+  {
+    logo: <IoMdHome />,
+    name: "watch later",
+  },
+  {
+    logo: <IoMdHome />,
+    name: "watch later",
+  },
+  {
+    logo: <IoMdHome />,
+    name: "watch later",
+  },
+];
 const Sidebar = () => {
   return (
-    <div className="bg-white fixed w-[17%] top-14 h-screen left-0 right-1 overflow-auto  hover:overflow-scroll">
+    <div className="fixed w-[17%] top-14 h-screen left-0 right-1 overflow-y-scroll">
       <div className="flex flex-col gap-1  mx-4 mt-2 ">
         {SidebarItem.map((val, i) => {
           return (
@@ -140,6 +158,10 @@ const Sidebar = () => {
           </div>
         </div>
       </div>
+      <div>
+        <hr className="ml-2 mr-1 mt-4 " />
+      </div>
+      <div className="explore"></div>
     </div>
   );
 };
