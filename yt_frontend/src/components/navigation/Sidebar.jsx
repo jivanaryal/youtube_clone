@@ -122,7 +122,6 @@ const MoreFromYt = [
 const Sidebar = () => {
   return (
     <div className="bg-slate-100 ">
-      <div>hello</div>
       <div className="flex flex-col gap-1 mt-2 ml-2 mr-1">
         {SidebarItem.map((val, i) => (
           <div
