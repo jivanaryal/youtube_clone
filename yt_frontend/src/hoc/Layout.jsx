@@ -7,6 +7,7 @@ import CSidebar from "../user-cms/components/navigation/CSidebar";
 
 const Layout = () => {
   const [showCms, setShowCms] = useState(true);
+  const [showSingleItem, setShowSingleItem] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -27,11 +28,12 @@ const Layout = () => {
           )}
         </div>
         <div className="flex">
-          <div className="w-[17%] overflow-y-scroll  top-0 left-0">
-            {showCms ? <Sidebar /> : <CSidebar />}
-          </div>
-          <div className="w-[83%] mx-3 min-h-[91vh]">
-            <Outlet />
+          <div className="w-[17%]">{showCms ? <Sidebar /> : <CSidebar />}</div>
+          <div className="w-[83%] mx-3 min-h-[90vh]">
+            <Outlet
+              showSingleItem={showSingleItem}
+              setShowSingleItem={setShowSingleItem}
+            />
           </div>
         </div>
       </div>

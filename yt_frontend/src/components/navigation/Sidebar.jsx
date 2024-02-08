@@ -1,13 +1,32 @@
 import { IoMdHome } from "react-icons/io";
 import { SiYoutubeshorts } from "react-icons/si";
 import { MdOutlineSubscriptions } from "react-icons/md";
-import { FaAngleRight } from "react-icons/fa";
+import {
+  FaAngleDown,
+  FaAngleRight,
+  FaHistory,
+  FaMusic,
+  FaDownload,
+  FaYoutube,
+} from "react-icons/fa";
+import { RiVideoLine } from "react-icons/ri";
+import { BiLike } from "react-icons/bi";
+import {
+  SiYoutubegaming,
+  SiYoutubemusic,
+  SiYoutubestudio,
+} from "react-icons/si";
+import { TbBrandYoutubeKids } from "react-icons/tb";
+import { AiOutlineTrophy } from "react-icons/ai";
+import { MdOutlineWatchLater } from "react-icons/md";
+import { FaArrowTrendUp } from "react-icons/fa6";
 import sub1 from "../../assets/subscription/sub1.jpg";
 import sub2 from "../../assets/subscription/sub2.jpg";
 import sub3 from "../../assets/subscription/sub3.jpg";
 import sub4 from "../../assets/subscription/sub4.jpg";
 import sub5 from "../../assets/subscription/sub5.jpg";
 import sub6 from "../../assets/subscription/sub6.jpg";
+
 const SidebarItem = [
   {
     logo: <IoMdHome />,
@@ -29,18 +48,27 @@ const SideYou = [
     name: "your channel",
   },
   {
-    logo: <IoMdHome />,
+    logo: <FaHistory />,
     name: "history",
   },
   {
-    logo: <IoMdHome />,
+    logo: <RiVideoLine />,
     name: "your videos",
   },
   {
-    logo: <IoMdHome />,
+    logo: <MdOutlineWatchLater />,
     name: "watch later",
   },
+  {
+    logo: <FaDownload />,
+    name: "Downlods",
+  },
+  {
+    logo: <BiLike />,
+    name: "Liked Videos",
+  },
 ];
+
 const Subscriptions = [
   {
     logo: sub1,
@@ -69,44 +97,46 @@ const Subscriptions = [
 ];
 const Explore = [
   {
-    logo: <IoMdHome />,
-    name: "watch later",
+    logo: <FaArrowTrendUp />,
+    name: "Trending",
   },
   {
-    logo: <IoMdHome />,
-    name: "watch later",
+    logo: <FaMusic />,
+    name: "Music",
   },
   {
-    logo: <IoMdHome />,
-    name: "watch later",
+    logo: <SiYoutubegaming />,
+    name: "Gaming",
   },
   {
-    logo: <IoMdHome />,
-    name: "watch later",
+    logo: <AiOutlineTrophy />,
+    name: "SPorts",
   },
+];
+const MoreFromYt = [
+  { icon: <FaYoutube />, name: "YouTube Premium" },
+  { icon: <SiYoutubestudio />, name: "YouTube Studio" },
+  { icon: <SiYoutubemusic />, name: "YouTube Music" },
+  { icon: <TbBrandYoutubeKids />, name: "YouTube Kids" },
 ];
 const Sidebar = () => {
   return (
-    <div className="fixed w-[17%] top-14 h-screen left-0 right-1 overflow-y-scroll">
-      <div className="flex flex-col gap-1  mx-4 mt-2 ">
-        {SidebarItem.map((val, i) => {
-          return (
-            <div
-              key={i}
-              className="flex gap-2 pl-4 py-2 items-center capitalize  border-white   hover:outline-none hover:rounded-xl hover:border-gray-400 hover:bg-gray-100  "
-            >
-              <div className="text-2xl">{val.logo}</div>
-              <div className="text-sm font-semibold text-gray-800">
-                {val.name}
-              </div>
+    <div className="bg-slate-100 ">
+      <div className="flex flex-col gap-1 mt-2 ml-2 mr-1">
+        {SidebarItem.map((val, i) => (
+          <div
+            key={i}
+            className="flex gap-2 pl-4 py-2 items-center capitalize  border-white   hover:outline-none hover:rounded-xl hover:border-gray-400 hover:bg-gray-100"
+          >
+            <div className="text-2xl">{val.logo}</div>
+            <div className="text-sm font-semibold text-gray-800">
+              {val.name}
             </div>
-          );
-        })}
+          </div>
+        ))}
       </div>
-
-      <div>
-        <hr className="ml-2 mr-1 mt-4 " />
-      </div>
+      {/* You section */}
+      <hr className="ml-2 mr-1 mt-4" />
       <div className="mx-4">
         <div className="flex items-center gap-4 mt-4 py-2 pl-4 border-white   hover:outline-none hover:rounded-xl hover:border-gray-400 hover:bg-gray-100 ">
           <div className="text-xl font-semibold">You</div>
@@ -114,54 +144,84 @@ const Sidebar = () => {
             <FaAngleRight />
           </div>
         </div>
-        <div>
-          {SideYou.map((val, i) => {
-            return (
-              <div
-                key={i}
-                className="flex gap-5 pl-4 py-2 items-center capitalize  border-white   hover:outline-none hover:rounded-xl hover:border-gray-400 hover:bg-gray-100  "
-              >
-                <div className="text-2xl">{val.logo}</div>
-                <div className="text-sm font-semibold text-gray-800">
-                  {val.name}
-                </div>
-              </div>
-            );
-          })}
+        {SideYou.map((val, i) => (
+          <div
+            key={i}
+            className="flex gap-5 pl-4 py-2 items-center capitalize  border-white   hover:outline-none hover:rounded-xl hover:border-gray-400 hover:bg-gray-100"
+          >
+            <div className="text-2xl">{val.logo}</div>
+            <div className="text-sm font-semibold text-gray-800">
+              {val.name}
+            </div>
+          </div>
+        ))}
+      </div>
+      {/* Subscription section */}
+      <hr className="ml-2 mr-1 mt-2" />
+      <div className="ml-2 mr-1  mb-4">
+        <div className="flex items-center gap-4 mt-4 py-2 pl-4 border-white   hover:outline-none hover:rounded-xl hover:border-gray-400 hover:bg-gray-100 ">
+          <div className="text-xl font-semibold">Subscriptions</div>
+        </div>
+        {Subscriptions.map((val, i) => (
+          <div
+            key={i}
+            className="flex gap-5 pl-4 py-1 items-center capitalize  border-white   hover:outline-none hover:rounded-xl hover:border-gray-400 hover:bg-gray-100"
+          >
+            <div className="text-2xl rounded-md">
+              <img src={val.logo} alt="" className="w-10 rounded-full" />
+            </div>
+            <div className="text-sm font-semibold text-gray-800">
+              {val.name}
+            </div>
+          </div>
+        ))}
+        <div className="flex items-center gap-5 mt-2 py-3 pl-4 border-white   hover:outline-none hover:rounded-xl hover:border-gray-400 hover:bg-gray-100 ">
+          <div className="text-2xl">
+            <FaAngleDown />
+          </div>
+          <div className="text-sm font-semibold">Show More</div>
         </div>
       </div>
-      {/*  SUbscription section */}
-      <div>
-        <hr className="ml-2 mr-1 mt-4" />
-      </div>
-      <div className="subcription">
-        <div className="mx-4 mb-1">
+      {/* Explore Section */}
+      <hr className="ml-2 mr-1 mt-2" />
+      <div className="Explore">
+        <div className="mx-4  mb-4">
           <div className="flex items-center gap-4 mt-4 py-2 pl-4 border-white   hover:outline-none hover:rounded-xl hover:border-gray-400 hover:bg-gray-100 ">
-            <div className="text-xl font-semibold">Subscriptions</div>
+            <div className="text-xl font-semibold">Explore</div>
           </div>
-          <div>
-            {Subscriptions.map((val, i) => {
-              return (
-                <div
-                  key={i}
-                  className="flex gap-5 pl-4 py-1 items-center capitalize  border-white   hover:outline-none hover:rounded-xl hover:border-gray-400 hover:bg-gray-100  "
-                >
-                  <div className="text-2xl rounded-md">
-                    <img src={val.logo} alt="" className="w-10 rounded-full" />
-                  </div>
-                  <div className="text-sm font-semibold text-gray-800">
-                    {val.name}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+          {Explore.map((val, i) => (
+            <div
+              key={i}
+              className="flex gap-5 pl-4 py-2 items-center capitalize  border-white   hover:outline-none hover:rounded-xl hover:border-gray-400 hover:bg-gray-100"
+            >
+              <div className="text-2xl rounded-md">{val.logo}</div>
+              <div className="text-sm font-semibold text-gray-800">
+                {val.name}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
-      <div>
-        <hr className="ml-2 mr-1 mt-4 " />
+      <hr className="ml-2 mr-1 mt-2" />
+      {/* More from youtube */}
+      <div className="more from youtube">
+        <div className="ml-2 mr-1 mb-10">
+          <div className="flex items-center gap-4 mt-4 py-2 pl-3 border-white   hover:outline-none hover:rounded-xl hover:border-gray-400 hover:bg-gray-100 ">
+            <div className="text-md font-semibold">More From Youtube</div>
+          </div>
+          {MoreFromYt.map((val, i) => (
+            <div
+              key={i}
+              className="flex gap-5 pl-4 py-2 items-center capitalize  border-white   hover:outline-none hover:rounded-xl hover:border-gray-400 hover:bg-gray-100"
+            >
+              <div className="text-2xl rounded-md text-red-600">{val.icon}</div>
+              <div className="text-sm font-semibold text-gray-800">
+                {val.name}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
-      <div className="explore"></div>
     </div>
   );
 };
