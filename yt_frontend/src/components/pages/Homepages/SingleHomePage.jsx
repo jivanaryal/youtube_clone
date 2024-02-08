@@ -12,7 +12,7 @@ const SingleHomePage = () => {
             What if Today is Your Last Day? – A Story of a Monk & an Abbot |
             Sadhguru
           </div>
-          <div className="lskcm">
+          <div className="flex">
             <div className="flex items-center gap-2">
               <img
                 src={manoj}
@@ -25,7 +25,12 @@ const SingleHomePage = () => {
               </div>
             </div>
 
-            <div className="subcriber"></div>
+            <div className="flex">
+              <div className="logo"></div>
+              <div className="logo">logo</div>
+              <div className="para">subscribed</div>
+              <div>6</div>
+            </div>
           </div>
         </div>
         <div className="right col-span-4 "></div>
