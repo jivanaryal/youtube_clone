@@ -28,9 +28,7 @@ const Layout = () => {
           )}
         </div>
         <div className="flex">
-          <div className="w-[15%] sticky top-0 left-0 ">
-            {showCms ? <Sidebar /> : <CSidebar />}
-          </div>
+          <div className="w-[15%]">{showCms ? <Sidebar /> : <CSidebar />}</div>
           <div className="w-[85%] mx-3 min-h-[90vh]">
             <Outlet
               showSingleItem={showSingleItem}

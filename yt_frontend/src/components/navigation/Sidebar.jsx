@@ -84,7 +84,7 @@ const Subscriptions = [
 
 const Sidebar = () => {
   return (
-    <div className="bg-white fixed w-[17%] top-14 h-screen left-0 right-1 overflow-auto  hover:overflow-scroll">
+    <div className="     ">
       <div className="flex flex-col gap-1 mx-4 mt-2 ">
         {SidebarItem.map((val, i) => (
           <div
@@ -123,7 +123,7 @@ const Sidebar = () => {
 
       <hr className="ml-2 mr-1 mt-4" />
 
-      <div className="mx-4 mb-1">
+      <div className="mx-4  mb-10">
         <div className="flex items-center gap-4 mt-4 py-2 pl-4 border-white   hover:outline-none hover:rounded-xl hover:border-gray-400 hover:bg-gray-100 ">
           <div className="text-xl font-semibold">Subscriptions</div>
         </div>
