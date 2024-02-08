@@ -1,6 +1,25 @@
 import { IoMdHome } from "react-icons/io";
 import { SiYoutubeshorts } from "react-icons/si";
 import { MdOutlineSubscriptions } from "react-icons/md";
+import {
+  FaAngleDown,
+  FaAngleRight,
+  FaHistory,
+  FaMusic,
+  FaDownload,
+  FaYoutube,
+} from "react-icons/fa";
+import { RiVideoLine } from "react-icons/ri";
+import { BiLike } from "react-icons/bi";
+import {
+  SiYoutubegaming,
+  SiYoutubemusic,
+  SiYoutubestudio,
+} from "react-icons/si";
+import { TbBrandYoutubeKids } from "react-icons/tb";
+import { AiOutlineTrophy } from "react-icons/ai";
+import { MdOutlineWatchLater } from "react-icons/md";
+import { FaArrowTrendUp } from "react-icons/fa6";
 import { FaAngleRight, FaHistory } from "react-icons/fa";
 import sub1 from "../../assets/subscription/sub1.jpg";
 import sub2 from "../../assets/subscription/sub2.jpg";
@@ -34,14 +53,20 @@ const SideYou = [
     name: "history",
   },
   {
-    logo: <IoMdHome />,
+    logo: <RiVideoLine />,
     name: "your videos",
   },
   {
-    logo: <IoMdHome />,
+    logo: <MdOutlineWatchLater />,
     name: "watch later",
   },
   {
+    logo: <FaDownload />,
+    name: "Downlods",
+  },
+  {
+    logo: <BiLike />,
+=======
     logo: <IoMdHome />,
     name: "watch later",
   },
@@ -81,6 +106,34 @@ const Subscriptions = [
     name: "Ansh Mehra",
   },
 ];
+const Explore = [
+  {
+    logo: <FaArrowTrendUp />,
+    name: "Trending",
+  },
+  {
+    logo: <FaMusic />,
+    name: "Music",
+  },
+  {
+    logo: <SiYoutubegaming />,
+    name: "Gaming",
+  },
+  {
+    logo: <AiOutlineTrophy />,
+    name: "SPorts",
+  },
+];
+const MoreFromYt = [
+  { icon: <FaYoutube />, name: "YouTube Premium" },
+  { icon: <SiYoutubestudio />, name: "YouTube Studio" },
+  { icon: <SiYoutubemusic />, name: "YouTube Music" },
+  { icon: <TbBrandYoutubeKids />, name: "YouTube Kids" },
+];
+const Sidebar = () => {
+  return (
+    <div className="bg-slate-100 ">
+      <div className="flex flex-col gap-1 mt-2 ml-2 mr-1">
 
 const Sidebar = () => {
   return (
@@ -98,9 +151,10 @@ const Sidebar = () => {
           </div>
         ))}
       </div>
-
+      {/* You section */}
       <hr className="ml-2 mr-1 mt-4" />
 
+      <hr className="ml-2 mr-1 mt-4" />
       <div className="mx-4">
         <div className="flex items-center gap-4 mt-4 py-2 pl-4 border-white   hover:outline-none hover:rounded-xl hover:border-gray-400 hover:bg-gray-100 ">
           <div className="text-xl font-semibold">You</div>
@@ -117,6 +171,73 @@ const Sidebar = () => {
             <div className="text-sm font-semibold text-gray-800">
               {val.name}
             </div>
+          </div>
+        ))}
+      </div>
+      {/* Subscription section */}
+      <hr className="ml-2 mr-1 mt-2" />
+      <div className="ml-2 mr-1  mb-4">
+        <div className="flex items-center gap-4 mt-4 py-2 pl-4 border-white   hover:outline-none hover:rounded-xl hover:border-gray-400 hover:bg-gray-100 ">
+          <div className="text-xl font-semibold">Subscriptions</div>
+        </div>
+        {Subscriptions.map((val, i) => (
+          <div
+            key={i}
+            className="flex gap-5 pl-4 py-1 items-center capitalize  border-white   hover:outline-none hover:rounded-xl hover:border-gray-400 hover:bg-gray-100"
+          >
+            <div className="text-2xl rounded-md">
+              <img src={val.logo} alt="" className="w-10 rounded-full" />
+            </div>
+            <div className="text-sm font-semibold text-gray-800">
+              {val.name}
+            </div>
+          </div>
+        ))}
+        <div className="flex items-center gap-5 mt-2 py-3 pl-4 border-white   hover:outline-none hover:rounded-xl hover:border-gray-400 hover:bg-gray-100 ">
+          <div className="text-2xl">
+            <FaAngleDown />
+          </div>
+          <div className="text-sm font-semibold">Show More</div>
+        </div>
+      </div>
+      {/* Explore Section */}
+      <hr className="ml-2 mr-1 mt-2" />
+      <div className="Explore">
+        <div className="mx-4  mb-4">
+          <div className="flex items-center gap-4 mt-4 py-2 pl-4 border-white   hover:outline-none hover:rounded-xl hover:border-gray-400 hover:bg-gray-100 ">
+            <div className="text-xl font-semibold">Explore</div>
+          </div>
+          {Explore.map((val, i) => (
+            <div
+              key={i}
+              className="flex gap-5 pl-4 py-2 items-center capitalize  border-white   hover:outline-none hover:rounded-xl hover:border-gray-400 hover:bg-gray-100"
+            >
+              <div className="text-2xl rounded-md">{val.logo}</div>
+              <div className="text-sm font-semibold text-gray-800">
+                {val.name}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <hr className="ml-2 mr-1 mt-2" />
+      {/* More from youtube */}
+      <div className="more from youtube">
+        <div className="ml-2 mr-1 mb-10">
+          <div className="flex items-center gap-4 mt-4 py-2 pl-3 border-white   hover:outline-none hover:rounded-xl hover:border-gray-400 hover:bg-gray-100 ">
+            <div className="text-md font-semibold">More From Youtube</div>
+          </div>
+          {MoreFromYt.map((val, i) => (
+            <div
+              key={i}
+              className="flex gap-5 pl-4 py-2 items-center capitalize  border-white   hover:outline-none hover:rounded-xl hover:border-gray-400 hover:bg-gray-100"
+            >
+              <div className="text-2xl rounded-md text-red-600">{val.icon}</div>
+              <div className="text-sm font-semibold text-gray-800">
+                {val.name}
+              </div>
+            </div>
+          ))}
           </div>
         ))}
       </div>
