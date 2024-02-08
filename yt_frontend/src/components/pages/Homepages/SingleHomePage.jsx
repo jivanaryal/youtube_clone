@@ -13,15 +13,15 @@ const SingleHomePage = () => {
             Sadhguru
           </div>
           <div className="lskcm">
-            <div className="flex items-center">
+            <div className="flex items-center gap-2">
               <img
                 src={manoj}
                 alt=""
                 className="border-1 outline-none rounded-full w-8"
               />
-              <div className="">
-                <div className="chname">Manoj Belbase</div>
-                <div className="subcrib">11.7M subscribers</div>
+              <div className="leading-3">
+                <div className="text-lg font-semibold">Manoj Belbases</div>
+                <div className="text-sm">11.7M subscribers</div>
               </div>
             </div>
 
