@@ -318,13 +318,13 @@ const Sidebar = () => {
               </div>
             ))}
           </div>
-          <div className="ml-2 mr-2 text-xs font-semibold text-gray-800">
+          <div classame="ml-2 mr-2 text-xs font-semibold text-gray-800">
             <p className="">How YouTube works</p>
             <p className="">Test new feature</p>
           </div>
         </div>
       </div>
-      <div className="copyright ml-4  mr-2 my-4 text-xs font-semibold text-gray-500">
+      <div className="copyright ml-4  mr-2 my-4 text-xs font-semibold text-gray-00">
         <span>&copy; 2024 Google LLC</span>
       </div>
     </div>
