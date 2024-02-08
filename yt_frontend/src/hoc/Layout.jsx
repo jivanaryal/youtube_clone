@@ -28,11 +28,8 @@ const Layout = () => {
           )}
         </div>
         <div className="flex">
-
           <div className="w-[17%]">{showCms ? <Sidebar /> : <CSidebar />}</div>
           <div className="w-[83%] mx-3 min-h-[90vh]">
-          <div className="w-[15%]">{showCms ? <Sidebar /> : <CSidebar />}</div>
-          <div className="w-[85%] mx-3 min-h-[90vh]">
             <Outlet
               showSingleItem={showSingleItem}
               setShowSingleItem={setShowSingleItem}
