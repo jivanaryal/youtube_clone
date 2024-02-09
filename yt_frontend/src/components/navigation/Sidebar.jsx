@@ -310,8 +310,8 @@ const Sidebar = () => {
             ))}
           </div>
         </div>
-        <div className="lbottom mt-4 mr-2">
-          <div className="ml-2 mb-1 flex justify-between">
+        <div className="lbottom mt-4 ml-2 mr-2">
+          <div className="mb-1 flex justify-between">
             {lbottom.map((val, i) => (
               <div className="text-xs font-semibold text-gray-800" key={i}>
                 {val.name}
@@ -319,12 +319,12 @@ const Sidebar = () => {
             ))}
           </div>
           <div classame="ml-2 mr-2 text-xs font-semibold text-gray-800">
-            <p className="">How YouTube works</p>
-            <p className="">Test new feature</p>
+            <p className=" text-xs font-semibold">How YouTube works</p>
+            <p className=" text-xs font-semibold">Test new feature</p>
           </div>
         </div>
       </div>
-      <div className="copyright ml-4  mr-2 my-4 text-xs font-semibold text-gray-00">
+      <div className="copyright ml-4  mr-2 my-4 text-xs font-semibold text-gray-500">
         <span>&copy; 2024 Google LLC</span>
       </div>
     </div>
