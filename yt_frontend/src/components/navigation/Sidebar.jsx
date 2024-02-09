@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { IoMdHome } from "react-icons/io";
 import { SiYoutubeshorts } from "react-icons/si";
 import { MdOutlineSubscriptions } from "react-icons/md";
@@ -8,6 +9,7 @@ import {
   FaMusic,
   FaDownload,
   FaYoutube,
+  FaAngleUp,
 } from "react-icons/fa";
 import { RiVideoLine } from "react-icons/ri";
 import { BiLike } from "react-icons/bi";
@@ -179,6 +181,10 @@ const lbottom = [
   },
 ];
 const Sidebar = () => {
+  const [showMoreSubscriptions, setShowMoreSubscriptions] = useState(false);
+  const visibleSubscriptions = showMoreSubscriptions
+    ? Subscriptions
+    : Subscriptions.slice(0, 4);
   return (
     <div className="border-r-2">
       <div className="flex flex-col gap-1 mt-2 ml-2 mr-1">
@@ -216,15 +222,15 @@ const Sidebar = () => {
         ))}
       </div>
       {/* Subscription section */}
-      <hr className="ml-2 mr-1 mt-2" />
+
       <div className="ml-2 mr-1  mb-4">
-        <div className="flex items-center gap-4 mt-4 py-2 pl-4 border-white   hover:outline-none hover:rounded-xl hover:border-gray-400 hover:bg-gray-100 ">
+        <div className="flex items-center gap-4 mt-4 py-2 pl-4 border-white hover:outline-none hover:rounded-xl hover:border-gray-400 hover:bg-gray-100 ">
           <div className="text-xl font-semibold">Subscriptions</div>
         </div>
-        {Subscriptions.map((val, i) => (
+        {visibleSubscriptions.map((val, i) => (
           <div
             key={i}
-            className="flex gap-5 pl-4 py-1 items-center capitalize  border-white   hover:outline-none hover:rounded-xl hover:border-gray-400 hover:bg-gray-100"
+            className="flex gap-5 pl-4 py-1 items-center capitalize border-white hover:outline-none hover:rounded-xl hover:border-gray-400 hover:bg-gray-100"
           >
             <div className="text-2xl rounded-md">
               <img src={val.logo} alt="" className="w-10 rounded-full" />
@@ -234,11 +240,16 @@ const Sidebar = () => {
             </div>
           </div>
         ))}
-        <div className="flex items-center gap-5 mt-2 py-3 pl-4 border-white   hover:outline-none hover:rounded-xl hover:border-gray-400 hover:bg-gray-100 ">
+        <div
+          onClick={() => setShowMoreSubscriptions(!showMoreSubscriptions)}
+          className="flex items-center gap-5 mt-2 py-3 pl-4 border-white hover:outline-none hover:rounded-xl hover:border-gray-400 hover:bg-gray-100 "
+        >
           <div className="text-2xl">
-            <FaAngleDown />
+            {showMoreSubscriptions ? <FaAngleUp /> : <FaAngleDown />}
           </div>
-          <div className="text-sm font-semibold">Show More</div>
+          <div className="text-sm font-semibold">
+            {showMoreSubscriptions ? "Show Less" : "Show More"}
+          </div>
         </div>
       </div>
       {/* Explore Section */}
