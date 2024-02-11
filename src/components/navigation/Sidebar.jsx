@@ -1,3 +1,5 @@
+// import { useState } from "react";
+// import Shorts from "../pages/Homepages/Shorts";
 import { IoMdHome } from "react-icons/io";
 import { SiYoutubeshorts } from "react-icons/si";
 import { MdOutlineSubscriptions } from "react-icons/md";
@@ -84,12 +86,18 @@ const Subscriptions = [
 ];
 
 const Sidebar = () => {
+  // const [ShowShorts, setShowShorts] = useState(false);
+  // const toogleShorts = () => {
+  //   setShowShorts(!ShowShorts);
+  // };
   return (
     <div className="     ">
       <div className="flex flex-col gap-1 mx-4 mt-2 ">
+        {/* {ShowShorts && <Shorts />} */}
         {SidebarItem.map((val, i) => (
           <div
             key={i}
+            // onClick={val.name === "shorts" ? toogleShorts : undefined}
             className="flex gap-2 pl-4 py-2 items-center capitalize  border-white   hover:outline-none hover:rounded-xl hover:border-gray-400 hover:bg-gray-100"
           >
             <div className="text-2xl">{val.logo}</div>
@@ -112,7 +120,7 @@ const Sidebar = () => {
         {SideYou.map((val, i) => (
           <div
             key={i}
-            className="flex gap-5 pl-4 py-2 items-center capitalize  border-white   hover:outline-none hover:rounded-xl hover:border-gray-400 hover:bg-gray-100"
+            className="flex gap-5 pl-4 py-2 items-center capitalize  border-white   hover:outline-none hover:rounded-xl hover:border-gray-400 hover:bg-gray-100 cursor-pointer"
           >
             <div className="text-2xl">{val.logo}</div>
             <div className="text-sm font-semibold text-gray-800">
