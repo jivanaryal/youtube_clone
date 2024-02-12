@@ -43,3 +43,11 @@
 .read-the-docs {
   color: #888;
 }
+
+.icon-css{
+  /* background-color: red; */
+  /* background-color: #D1D5DB; */
+  border: 1px solid gray ;
+  border-radius: 999px;
+  /* cursor: pointer; */
+}
