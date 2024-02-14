@@ -1,20 +1,41 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "../components/navigation/Navbar";
 import Sidebar from "../components/navigation/Sidebar";
+import { useEffect, useState } from "react";
+import CNav from "../user-cms/components/navigation/CNav";
+import CSidebar from "../user-cms/components/navigation/CSidebar";
 
 const Layout = () => {
+  const [showCms, setShowCms] = useState(true);
+  const [showSingleItem, setShowSingleItem] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname === "/") {
+      setShowCms(true);
+    } else if (location.pathname === "/cdashboard") {
+      setShowCms(false);
+    }
+  }, [location]);
   return (
     <div>
       <div>
         <div className="Navbar sticky top-0">
-          <Navbar />
+          {showCms ? (
+            <Navbar showCms={showCms} setShowCms={setShowCms} />
+          ) : (
+            <CNav />
+          )}
         </div>
-        <div className="flex">
-          <div className="w-[15%] sticky top-0 left-0">
-            <Sidebar />
+        <div className="grid grid-cols-12 ">
+          <div className="col-span-2 hidden ">
+            {showCms ? <Sidebar /> : <CSidebar />}
           </div>
-          <div className="w-[85%] mx-3">
-            <Outlet />
+          <div className="col-span-full mx-3 min-h-[90vh]">
+            <Outlet
+              showSingleItem={showSingleItem}
+              setShowSingleItem={setShowSingleItem}
+            />
           </div>
         </div>
       </div>
