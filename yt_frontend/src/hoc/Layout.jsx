@@ -28,9 +28,11 @@ const Layout = () => {
             <CNav />
           )}
         </div>
-        <div className="flex">
-          <div className="w-[17%]">{showCms ? <Sidebar /> : <CSidebar />}</div>
-          <div className="w-[83%] mx-3 min-h-[90vh]">
+        <div className="grid grid-cols-12">
+          <div className="col-span-2 ">
+            {showCms ? <Sidebar /> : <CSidebar />}
+          </div>
+          <div className="col-span-10 mx-3 min-h-[90vh]">
             <Outlet
               showSingleItem={showSingleItem}
               setShowSingleItem={setShowSingleItem}

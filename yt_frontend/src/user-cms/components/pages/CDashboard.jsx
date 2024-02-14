@@ -1,7 +1,15 @@
+import { useState } from "react";
 import upload from "../../../assets/logo/upload.png";
+import FormElement from "./formElement/FormElement";
 const CDashboard = () => {
+  const [seen, setSeen] = useState(false);
+
+  function togglePop() {
+    setSeen(!seen);
+  }
   return (
     <div className="pl-10 pt-6 h-full bg-gray-100">
+      {seen ? <FormElement toggle={togglePop} /> : null}
       <div>
         <div className="font-semibold  text-2xl">Channel Dashboard</div>
 
@@ -16,7 +24,12 @@ const CDashboard = () => {
                   Want to see metrics on your recent video? Upload and publish a
                   video to get started.
                 </div>
-                <button className="upload bg-blue-700 mt-4 py-1 px-2 rounded-sm font-semibold text-white">
+                <button
+                  className="upload bg-blue-700 mt-4 py-1 px-2 rounded-sm font-semibold text-white"
+                  onClick={() => {
+                    togglePop();
+                  }}
+                >
                   UPLOAD PHOTOS
                 </button>
               </div>

@@ -9,7 +9,6 @@ import {
   FaMusic,
   FaDownload,
   FaYoutube,
-  FaAngleUp,
 } from "react-icons/fa";
 import { RiVideoLine } from "react-icons/ri";
 import { BiLike } from "react-icons/bi";
@@ -121,7 +120,6 @@ const Explore = [
     name: "SPorts",
   },
 ];
-
 const MoreFromYt = [
   { icon: <FaYoutube />, name: "YouTube Premium" },
   { icon: <SiYoutubestudio />, name: "YouTube Studio" },
