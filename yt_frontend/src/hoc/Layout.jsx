@@ -20,6 +20,7 @@ const Layout = () => {
   return (
     <div>
       <div>
+        {/* <div>verify the conflict</div> */}
         <div className="Navbar sticky top-0">
           {showCms ? (
             <Navbar showCms={showCms} setShowCms={setShowCms} />
@@ -27,11 +28,11 @@ const Layout = () => {
             <CNav />
           )}
         </div>
-        <div className="grid grid-cols-12 ">
-          <div className="col-span-2 hidden ">
+        <div className="grid grid-cols-12">
+          <div className="col-span-2 ">
             {showCms ? <Sidebar /> : <CSidebar />}
           </div>
-          <div className="col-span-full mx-3 min-h-[90vh]">
+          <div className="col-span-10 mx-3 min-h-[90vh]">
             <Outlet
               showSingleItem={showSingleItem}
               setShowSingleItem={setShowSingleItem}

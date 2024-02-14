@@ -57,7 +57,8 @@ export const homePageItem = [
     image: homeItem,
     profilePic: profile,
     title: "Git and Github for Beginners-Crash Course",
-    channelName: "freeCodeCamp.org",
+
+    lName: "freeCodeCamp.org",
     views: "3.8M views",
     times: "3 years ago",
   },
