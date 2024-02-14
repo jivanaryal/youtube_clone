@@ -1,11 +1,8 @@
-import singleitem from "../../../assets/images/singleItem.png";
-import manoj from "../../../assets/subscription/sub2.jpg";
 import { AiOutlineLike } from "react-icons/ai";
 import { BiDislike } from "react-icons/bi";
 import { PiShareFatLight } from "react-icons/pi";
 import { HiDownload } from "react-icons/hi";
 import { HiOutlineDotsHorizontal } from "react-icons/hi";
-import { homePageItem } from "./HomePage";
 import { useEffect, useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
 import axios from "axios";
