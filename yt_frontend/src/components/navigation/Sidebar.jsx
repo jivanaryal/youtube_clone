@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { IoMdHome } from "react-icons/io";
+import { IoMdHome, IoMdAddCircleOutline } from "react-icons/io";
 import { SiYoutubeshorts } from "react-icons/si";
 import { MdOutlineSubscriptions } from "react-icons/md";
 import {
@@ -222,7 +222,7 @@ const Sidebar = () => {
         ))}
       </div>
       {/* Subscription section */}
-
+      <hr className="ml-2 mr-1 mt-2" />
       <div className="ml-2 mr-1  mb-4">
         <div className="flex items-center gap-4 mt-4 py-2 pl-4 border-white hover:outline-none hover:rounded-xl hover:border-gray-400 hover:bg-gray-100 ">
           <div className="text-xl font-semibold">Subscriptions</div>
@@ -248,7 +248,21 @@ const Sidebar = () => {
             {showMoreSubscriptions ? <FaAngleUp /> : <FaAngleDown />}
           </div>
           <div className="text-sm font-semibold">
-            {showMoreSubscriptions ? "Show Less" : "Show More"}
+            {showMoreSubscriptions
+              ? `${
+                  Subscriptions.length == visibleSubscriptions.length
+                    ? "Show Less"
+                    : `Show ${
+                        Subscriptions.length - visibleSubscriptions.length
+                      } more`
+                } `
+              : `${
+                  Subscriptions.length == visibleSubscriptions.length
+                    ? "Browse channels"
+                    : `Show ${
+                        Subscriptions.length - visibleSubscriptions.length
+                      } more`
+                } `}
           </div>
         </div>
       </div>
