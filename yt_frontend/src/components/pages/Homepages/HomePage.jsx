@@ -80,7 +80,7 @@ const HomePage = () => {
           console.log(val);
           return (
             <div key={i}>
-              <Link to="/singleitem">
+              <Link to={`/singleitem/${val.idypost}`} state={val}>
                 <div>
                   <div>
                     <img

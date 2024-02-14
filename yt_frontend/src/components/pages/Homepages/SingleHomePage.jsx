@@ -6,30 +6,45 @@ import { PiShareFatLight } from "react-icons/pi";
 import { HiDownload } from "react-icons/hi";
 import { HiOutlineDotsHorizontal } from "react-icons/hi";
 import { homePageItem } from "./HomePage";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useLocation, useParams } from "react-router-dom";
+import axios from "axios";
 
 const SingleHomePage = () => {
-  const [more, setMore] = useState(false);
+  const [youtubeData, setYoutubeData] = useState([]);
+
+  useEffect(() => {
+    axios.get("http://localhost:4000/ypost").then((res) => {
+      setYoutubeData(res.data);
+      console.log(res.data);
+    });
+  }, []);
+  const location = useLocation();
+  const id = useParams();
+  console.log(location, id);
   return (
     <div>
       <div className="grid grid-cols-12 gap-4 place-content-center w-11/12 mx-auto">
-        <div className="left col-span-8">
+        <div className=" col-span-8">
           <div className="image">
-            <img src={singleitem} alt="" className="w-full" />
+            <img
+              src={`http://localhost:4000/public/${location.state.thumbimage}`}
+              alt=""
+              className="w-full"
+            />
           </div>
-          <div className="text-xl font-bold mx-4">
-            What if Today is Your Last Day? – A Story of a Monk & an Abbot |
-            Sadhguru
-          </div>
+          <div className="text-xl font-bold mx-4">{location.state.title}</div>
           <div className="flex items-center  justify-between gap-8">
             <div className="flex items-center gap-3">
               <img
-                src={manoj}
+                src={`http://localhost:4000/public/${location.state.profile}`}
                 alt=""
                 className="border-1 outline-none rounded-full w-8"
               />
               <div className="leading-3">
-                <div className="text-lg font-semibold">Manoj Belbases</div>
+                <div className="text-lg font-semibold">
+                  {location.state.chname}
+                </div>
                 <div className="text-sm">11.7M subscribers</div>
               </div>
               <div className="flex">
@@ -82,33 +97,27 @@ const SingleHomePage = () => {
               <p>#goviral</p>
               <p>#longdrive</p>
             </div>
-            <div className="text-sm">
-              What if Today is Your Last Day? – A Story of a Monk & an Abbot |
-              Sadhguru
-            </div>
+            <div className="text-sm">{location.state.description}</div>
             <div>Discription</div>
-            <button
-              className="font-semibold text-base"
-              onClick={() => {
-                setMore(true);
-              }}
-            >
-              ...more
-            </button>
+            <button className="font-semibold text-base">...more</button>
           </div>
         </div>
         <div className=" col-span-4 mt-10 flex flex-col gap-2">
-          {homePageItem.map((val, i) => {
+          {youtubeData.map((val, i) => {
             return (
               <div key={i} className="flex gap-2">
                 <div className="left">
-                  <img src={val.image} alt="" className=" rounded-xl" />
+                  <img
+                    src={`http://localhost:4000/public/${val.thumbimage}`}
+                    alt=""
+                    className=" rounded-xl w-32"
+                  />
                 </div>
                 <div className="rig">
                   <div className="text-base font-semibold leading-4">
                     {val.title}
                   </div>
-                  <div className="text-sm text-gray-400">{val.channelName}</div>
+                  <div className="text-sm text-gray-400">{val.chname}</div>
                   <span className="px-2 text-xs"> 23M view</span>
                   <span className="text-xs"> 4 year</span>
                 </div>
